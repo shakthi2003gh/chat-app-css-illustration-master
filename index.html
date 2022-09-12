@@ -11,74 +11,82 @@
   <title>Frontend Mentor | [Challenge Name Here]</title>
 
   <link rel="stylesheet" href="/styles/style.css">
+  <script src="https://kit.fontawesome.com/5b5397a1a7.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-  <div class="chat-app">
-    <div class="header">
-      <img src="" class="back-btn" alt="">
-
-      <div class="profile">
-        <div class="profile__img">
-          <img src="" alt="">
-        </div>
-
-        <div class="proflie__details">
-          <div class="name">Samuel Green</div>
-          <div class="status">Available to Walk</div>
+  <main>
+    <div class="chat-app">
+      <div class="header">
+        <img src="" class="back-btn" alt="">
+        <div class="profile">
+          <i class="fa-solid fa-chevron-left navigate"></i>
+          <span class="profile__img">
+            <img src="./images/avatar.jpg" alt="">
+          </span>
+          <div class="profile__details">
+            <div class="name">Samuel Green</div>
+            <div class="status">Available to Walk</div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical menu"></i>
         </div>
       </div>
 
-      <img src="" class="menu-btn" alt="">
+      <div class="body">
+        <p class="message recevied">
+          That sounds great. I'd be happy with that.
+        </p>
+        <p class="message recevied">
+          Could you send over some pictures of your dog, please?
+        </p>
+
+        <div class="group-img send">
+          <img src="./images/dog-image-1.jpg" alt="">
+          <img src="./images/dog-image-2.jpg" alt="">
+          <img src="./images/dog-image-3.jpg" alt="">
+        </div>
+
+        <p class="message send">
+          Here are a few pictures. She's a happy girl!
+        </p>
+
+        <p class="message send">
+          Can you make it?
+        </p>
+
+        <p class="message recevied">
+          She looks so happy! The time we discussed works. How long shall I take her out for?
+        </p>
+
+        <label class="radio recevied">
+          <input type="radio" name="option">
+          <span class="detail">30 minute walk</span>
+          <span class="price">$29</span>
+        </label>
+
+        <label class="radio recevied">
+          <input type="radio" name="option">
+          <span class="detail">1 hour walk</span>
+          <span class="price">$49</span>
+        </label>
+
+        <div class="input-group">
+          <input type="text" placeholder="Type a message…">
+          <i class="fa-solid fa-circle-chevron-right fa-2xl send-btn"></i>
+        </div>
+      </div>
     </div>
 
-    <div class="body">
-      <p class="message recevied">
-        That sounds great. I'd be happy with that.
+    <div class="content">
+      <h1>Simple booking</h1>
+      <p>
+        Stay in touch with our dog walkers through the chat interface. This makes it easy to
+        discuss arrangements and make bookings. Once the walk has been completed you can rate
+        your walker and book again all through the chat.
       </p>
-
-      <p class="message recevied">
-        Could you send over some pictures of your dog, please?
-      </p>
-
-      <p class="message send">
-        Here are a few pictures. She's a happy girl!
-      </p>
-
-      <p class="message recevied">
-        Can you make it?
-      </p>
-
-      <p class="message recevied">
-        She looks so happy! The time we discussed works. How long shall I take her out for?
-      </p>
-
-      <label class="message special">
-        <input type="radio" name="option">
-        <span class="detail">30 minute walk</span>
-        <span class="price">$29</span>
-      </label>
-
-      <label class="message special">
-        <input type="radio" name="option">
-        <span class="detail">1 hour walk</span>
-        <span class="price">$49</span>
-      </label>
-
-      <input type="text" placeholder="Type a message…">
     </div>
-  </div>
-
-  <div class="content">
-    <h1>Simple booking</h1>
-
-    <p>
-      Stay in touch with our dog walkers through the chat interface. This makes it easy to
-      discuss arrangements and make bookings. Once the walk has been completed you can rate
-      your walker and book again all through the chat.
-    </p>
-  </div>
+  </main>
 </body>
 
 </html>

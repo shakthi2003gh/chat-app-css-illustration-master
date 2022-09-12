@@ -21,12 +21,263 @@ html {
   --clr-radio: hsl(289, 100%, 72%);
   --clr-white: hsl(0, 0%, 100%);
 
-  --lg: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  --clr-lg1: hsl(264, 100%, 61%);
+  --clr-lg2: hsl(293, 100%, 63%);
   --bg-app: hsl(270, 20%, 96%);
-  --bg-message: hsl(276, 100%, 81%);
+  --bg-message: hsla(276, 44%, 88%, 0.5);
 }
 
 body {
   font: 16px "Rubik", sans-serif;
   color: var(--clr-text);
+}
+
+h1 {
+  color: var(--clr-heading);
+}
+
+.content p {
+  line-height: 2.7ch;
+  max-width: 310px;
+  margin: 16px auto;
+}
+
+.chat-app p {
+  max-width: 155px;
+  margin: 0;
+}
+
+@media (min-width: 800px) {
+  .content p {
+    max-width: 450px;
+  }
+}
+
+main {
+  position: relative;
+  width: clamp(375px, 100%, 1200px);
+  margin: 0 auto;
+}
+
+main::before {
+  position: absolute;
+  top: -600px;
+  left: -330px;
+  content: "";
+  width: 520px;
+  height: 1000px;
+  border-radius: 100vh;
+  background: linear-gradient(to bottom, var(--clr-lg2), var(--clr-lg1));
+  z-index: -1;
+}
+
+.chat-app {
+  position: relative;
+  width: 260px;
+  height: 550px;
+  margin: 4rem auto;
+  border: 10px solid white;
+  border-radius: 32px;
+  box-shadow: 7px 7px 74px 0px rgb(0 0 0 / 30%), inset 100vw 0 0 var(--bg-app);
+  background-color: white;
+  overflow: hidden;
+}
+
+.chat-app .header {
+  position: relative;
+  height: 4.5rem;
+  border-radius: 22px 22px 6px 6px;
+  background: linear-gradient(to right, var(--clr-lg1), var(--clr-lg2));
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.chat-app .header::after {
+  position: absolute;
+  top: -0.9rem;
+  left: 50%;
+  content: "";
+  width: 60%;
+  height: 2rem;
+  border-radius: 100vh;
+  background-color: white;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  padding-top: 9px;
+  color: white;
+}
+
+.profile .navigate::before {
+  display: inline-block;
+  width: 10px;
+}
+
+.profile__img {
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+  border: 2px solid white;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.profile__img img {
+  width: 31px;
+  height: 31px;
+}
+
+.profile__details {
+  display: grid;
+  justify-items: start;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.profile__details .status {
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.profile .menu {
+  margin-left: auto;
+  opacity: 0.6;
+}
+
+.chat-app .body {
+  display: grid;
+  gap: 0.7rem;
+  font-size: 10px;
+  padding: 0.55rem;
+  background-color: var(--bg-app);
+}
+
+.body .message {
+  padding: 0.45rem;
+  border-radius: 10px;
+}
+
+.body .message.recevied {
+  color: var(--clr-chat-left);
+  background: var(--bg-message);
+}
+
+.body .message.send {
+  justify-self: right;
+  color: var(--clr-chat-right);
+  background: white;
+}
+
+.body .group-img {
+  display: flex;
+  gap: 10px;
+}
+
+.body .group-img.send {
+  justify-content: right;
+}
+
+.body .group-img img {
+  width: 48px;
+  border-radius: 10px;
+}
+
+.body .radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 180px;
+  height: 2.4rem;
+  padding: 10px;
+  color: white;
+  border-radius: 12px;
+  background: linear-gradient(to right, var(--clr-lg2), var(--clr-lg1));
+}
+
+.body .radio.recevied {
+  border-bottom-left-radius: 5px;
+}
+
+.body .radio input[type="radio"] {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 100vh;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+.body .radio input[type="radio"]:checked {
+  background-color: white;
+}
+
+.body .radio .detail {
+  opacity: 0.5;
+}
+
+.body .radio .price {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+.body .input-group {
+  position: absolute;
+  inset: 10px;
+  top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem;
+  padding-left: 1rem;
+  border-radius: 100vh;
+  background-color: white;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+}
+
+.input-group .send-btn::before {
+  color: var(--clr-heading);
+}
+
+.content {
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+
+  main::after {
+    position: absolute;
+    bottom: -400px;
+    right: -300px;
+    content: "";
+    width: 520px;
+    height: 1000px;
+    border-radius: 100vh;
+    background: rgba(230, 226, 226, 0.26);
+    z-index: -1;
+  }
+
+  main::before {
+    top: -400px;
+    left: -300px;
+  }
+
+  .content {
+    text-align: left;
+  }
 }
