@@ -28,8 +28,12 @@ html {
 }
 
 body {
+  display: grid;
+  place-content: center;
   font: 16px "Rubik", sans-serif;
   color: var(--clr-text);
+  height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
